@@ -1,0 +1,27 @@
+{
+  "valid": {
+    "email": "usuario.teste@ebac.com.br",
+    "password": "senha123",
+    "firstName": "Usuário",
+    "lastName": "Teste",
+    "displayName": "Usuario Teste"
+  },
+  "invalid": {
+    "email": "email.invalido",
+    "password": "123"
+  },
+  "checkout": {
+    "firstName": "João",
+    "lastName": "Silva",
+    "company": "EBAC",
+    "country": "Brasil",
+    "address": "Rua Teste, 123",
+    "address2": "Apto 45",
+    "city": "São Paulo",
+    "state": "SP",
+    "postcode": "01234-567",
+    "phone": "(11) 98765-4321",
+    "email": "joao.silva@ebac.com.br"
+  }
+}
+

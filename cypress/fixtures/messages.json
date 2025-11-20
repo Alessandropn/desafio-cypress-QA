@@ -1,0 +1,26 @@
+{
+  "cart": {
+    "productAdded": "foi adicionado no seu carrinho",
+    "cartEmpty": "Seu carrinho está vazio",
+    "cartUpdated": "Carrinho atualizado",
+    "itemRemoved": "removido",
+    "couponApplied": "Cupom aplicado com sucesso",
+    "couponInvalid": "Cupom inválido"
+  },
+  "product": {
+    "outOfStock": "Fora de estoque",
+    "inStock": "em estoque",
+    "selectOptions": "Selecione as opções",
+    "addedToWishlist": "adicionado à lista de desejos"
+  },
+  "checkout": {
+    "proceedToCheckout": "Concluir compra",
+    "continueShopping": "Continuar comprando"
+  },
+  "errors": {
+    "requiredField": "Este campo é obrigatório",
+    "invalidEmail": "Email inválido",
+    "invalidCoupon": "Cupom inválido"
+  }
+}
+

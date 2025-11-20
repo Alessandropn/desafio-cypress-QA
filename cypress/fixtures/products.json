@@ -1,0 +1,43 @@
+{
+  "ingridRunningJacket": {
+    "name": "Ingrid Running Jacket",
+    "slug": "ingrid-running-jacket",
+    "price": "R$84,00",
+    "sku": "WJ04",
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "colors": ["Orange", "Red", "White"],
+    "defaultSize": "M",
+    "defaultColor": "White"
+  },
+  "augustaPulloverJacket": {
+    "name": "Augusta Pullover Jacket",
+    "slug": "augusta-pullover-jacket",
+    "price": "R$57,00",
+    "sku": "WJ03",
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "colors": ["Blue", "Green", "Black"],
+    "defaultSize": "M",
+    "defaultColor": "Blue"
+  },
+  "josieYogaJacket": {
+    "name": "Josie Yoga Jacket",
+    "slug": "josie-yoga-jacket",
+    "price": "R$56,25",
+    "sku": "WJ02",
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "colors": ["Purple", "Pink", "Gray"],
+    "defaultSize": "S",
+    "defaultColor": "Purple"
+  },
+  "stellarSolarJacket": {
+    "name": "Stellar Solar Jacket",
+    "slug": "stellar-solar-jacket",
+    "price": "R$75,00",
+    "sku": "WJ01",
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "colors": ["Yellow", "Orange", "Red"],
+    "defaultSize": "L",
+    "defaultColor": "Yellow"
+  }
+}
+

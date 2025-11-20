@@ -1,0 +1,31 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Node modules
+node_modules/
+
+# Ambiente / variáveis
+.env
+.env.*.local
+
+# Cypress cache e artefatos temporários
+cypress/screenshots/
+cypress/videos/
+cypress/reports/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Editor configs
+.vscode/
+.idea/
+
+# Coverage (caso use nyc/istanbul)
+coverage/
+
+# Arquivos de build temporários
+dist/
+tmp/
