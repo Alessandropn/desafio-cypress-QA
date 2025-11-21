@@ -1,122 +1,117 @@
-# Estrutura de Automação Cypress - Fluxo de Carrinho
+# README.md
 
-Este projeto implementa automação de testes para o fluxo de carrinho da loja EBAC, seguindo boas práticas de Page Object Modeling e Locators Modeling.
+## 📦 Instalação das Dependências
 
-## 📁 Estrutura de Pastas
+Para instalar todas as dependências necessárias para executar o projeto:
 
-```
-cypress/
-├── e2e/                    # Testes end-to-end
-│   └── cart.cy.js         # Testes do fluxo de carrinho
-├── fixtures/               # Dados de teste (JSON)
-│   ├── messages.json      # Mensagens esperadas do sistema
-│   ├── user.json          # Dados de usuário
-│   └── products.json      # Dados de produtos
-├── pages/                  # Page Objects
-│   ├── HomePage.js        # Page Object da página inicial
-│   ├── ProductPage.js     # Page Object da página de produto
-│   ├── CartPage.js        # Page Object da página do carrinho
-│   └── Header.js          # Page Object do cabeçalho
-├── selectors/              # Locators/Selectors
-│   ├── homePage.selectors.js
-│   ├── productPage.selectors.js
-│   ├── cartPage.selectors.js
-│   └── header.selectors.js
-└── support/               # Arquivos de suporte
-    ├── commands.js
-    └── e2e.js
+``` bash
+npm install
 ```
 
-## 🎯 Boas Práticas Implementadas
+Ou, se estiver utilizando **Yarn**:
 
-### 1. **Locators Modeling**
-- Todos os selectors estão centralizados na pasta `selectors/`
-- Cada página possui seu próprio arquivo de selectors
-- Selectors são exportados como objetos nomeados para fácil manutenção
+``` bash
+yarn install
+```
 
-### 2. **Page Object Modeling**
-- Cada página possui sua própria classe Page Object
-- Métodos encapsulam ações e verificações
-- Page Objects são exportados como instâncias únicas (singleton)
+Certifique-se de que o Node.js está instalado em sua máquina.
 
-### 3. **Fixtures para Dados de Teste**
-- `messages.json`: Mensagens esperadas do sistema
-- `user.json`: Dados de usuário válidos e inválidos
-- `products.json`: Informações dos produtos (nome, preço, variações)
+------------------------------------------------------------------------
 
-## 📝 Como Usar
+## ▶️ Como Rodar os Testes
 
-### Executar os Testes
+Para executar todos os testes automatizados:
 
-```bash
-# Executar todos os testes
-npx cypress run
-
-# Executar em modo interativo
+``` bash
 npx cypress open
-
-# Executar um arquivo específico
-npx cypress run --spec "cypress/e2e/cart.cy.js"
 ```
 
-### Exemplo de Uso dos Page Objects
+Isso abrirá a interface gráfica do Cypress, permitindo rodar os testes
+manualmente.
 
-```javascript
-import HomePage from '../pages/HomePage';
-import ProductPage from '../pages/ProductPage';
-import CartPage from '../pages/CartPage';
+Se preferir rodar no modo headless:
 
-// Navegar para a home
-HomePage.visit();
-
-// Clicar em um produto
-HomePage.clickFirstProduct();
-
-// Selecionar variações e adicionar ao carrinho
-ProductPage.selectSize('M');
-ProductPage.selectColor('White');
-ProductPage.addToCart();
-
-// Verificar o carrinho
-CartPage.visit();
-CartPage.shouldHaveItems();
+``` bash
+npx cypress run
 ```
 
-## 🔍 Selectors
+------------------------------------------------------------------------
 
-Os selectors foram identificados através de debug do site e estão organizados por página:
+## 🧪 Cenários Automatizados
 
-- **HomePage**: Produtos, links de navegação
-- **ProductPage**: Variações (tamanho, cor), quantidade, botão comprar
-- **CartPage**: Tabela de itens, quantidade, remoção, cupons
-- **Header**: Carrinho, busca, menu de navegação
+A seguir está a lista de todos os cenários presentes nos testes,
+acompanhados de uma breve justificativa da escolha de cada um.
 
-## 📦 Fixtures
+------------------------------------------------------------------------
 
-### messages.json
-Contém todas as mensagens esperadas do sistema:
-- Mensagens de carrinho (produto adicionado, carrinho vazio, etc.)
-- Mensagens de produto (estoque, opções)
-- Mensagens de checkout
-- Mensagens de erro
+# 📁 Testes de Carrinho (`cart.cy.js`)
 
-### user.json
-Dados de usuário para testes:
-- Usuário válido
-- Usuário inválido
-- Dados para checkout
+### **1. Deve adicionar um produto ao carrinho com sucesso**
 
-### products.json
-Informações dos produtos:
-- Nome, slug, preço, SKU
-- Tamanhos e cores disponíveis
-- Valores padrão para testes
+Garante que o fluxo principal de compra funciona, incluindo seleção de
+variações e atualização visual do carrinho.
 
-## 🚀 Próximos Passos
+### **2. Deve navegar para o carrinho e verificar o produto adicionado**
 
-1. Adicionar mais cenários de teste
-2. Implementar testes de checkout
-3. Adicionar testes de busca
-4. Implementar testes de wishlist
-5. Adicionar relatórios de teste
+Valida que o produto foi corretamente persistido e exibido no carrinho
+após a inclusão.
 
+### **3. Deve atualizar a quantidade do produto no carrinho**
+
+Confirma que o usuário pode alterar quantidades, comportamento essencial
+para compras reais.
+
+### **4. Deve remover um produto do carrinho**
+
+Assegura que o carrinho permite remoção e limpa corretamente o estado.
+
+### **5. Deve verificar o dropdown do carrinho no header**
+
+Cobre a experiência rápida de visualizar o resumo do carrinho sem sair
+da página atual.
+
+### **6. Deve adicionar múltiplos produtos ao carrinho**
+
+Valida cálculos, contagem e consistência ao lidar com vários itens
+simultaneamente.
+
+------------------------------------------------------------------------
+
+# 👤 Testes de Conta do Usuário (`myAccount.cy.js`)
+
+### **1. Deve registrar um novo usuário com sucesso**
+
+Garante que o fluxo de criação de contas está funcional e aceitando
+novos cadastros.
+
+### **2. Deve fazer login com um usuário cadastrado e depois realizar logout**
+
+Valida autenticação e sessão do usuário, pontos críticos de segurança.
+
+### **3. Não deve ser possível fazer login deixando o campo de Username vazio**
+
+Cobre validações básicas de formulário, prevenindo erros de UX.
+
+### **4. Não deve ser possível fazer login deixando o campo de Senha vazio**
+
+Assegura que o backend e o frontend recusam credenciais incompletas.
+
+### **5. Não deve ser possível fazer login com email incorreto**
+
+Valida proteção contra tentativas com usuários inexistentes.
+
+### **6. Não deve ser possível fazer login com senha incorreta**
+
+Garante que o sistema diferencia senhas inválidas de emails válidos.
+
+------------------------------------------------------------------------
+
+## 📘 Sobre os Cenários Escolhidos
+
+Esses cenários cobrem os principais fluxos críticos de um e-commerce: -
+Cadastro e autenticação de usuários - Interação completa com o carrinho
+de compras - Validações essenciais para evitar comportamentos
+indevidos - Fluxos principais usados por qualquer usuário real
+
+O conjunto foi pensado para garantir confiabilidade, evitar regressões e
+validar comportamentos reais da aplicação.
