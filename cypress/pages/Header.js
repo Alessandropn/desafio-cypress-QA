@@ -39,7 +39,7 @@ class Header {
    * Clica no botão do carrinho
    */
   clickCartButton() {
-    cy.get(headerSelectors.cartButton).click();
+    cy.get(headerSelectors.cartDropdown).click();
   }
 
   /**
@@ -47,7 +47,7 @@ class Header {
    * @param {number} expectedCount - Quantidade esperada
    */
   shouldHaveCartCount(expectedCount) {
-    cy.get(headerSelectors.cartButton).should('contain', expectedCount.toString());
+    cy.get(headerSelectors.cartCountHeader).should('contain', expectedCount.toString());
   }
 
   /**
@@ -63,7 +63,7 @@ class Header {
    * @param {string} expectedTotal - Total esperado
    */
   shouldHaveCartTotal(expectedTotal) {
-    cy.get(headerSelectors.cartButton).should('contain', expectedTotal);
+    cy.get(headerSelectors.cartAmountHeader).should('contain', expectedTotal);
   }
 
   /**
@@ -78,7 +78,7 @@ class Header {
    * Clica no link "Ver carrinho" no dropdown do carrinho
    */
   clickViewCart() {
-    cy.get(headerSelectors.cartDropdownViewCartLink).click();
+    cy.get(headerSelectors.cartDropdownViewCartLink).filter(':visible').click();
   }
 
   /**

@@ -4,7 +4,7 @@
  */
 export const headerSelectors = {
   // Logo
-  logo: '.logo a',
+  logo: '.logo-in-theme',
   
   // Menu de navegação
   menuHome: 'a[href*="/home/"]',
@@ -18,19 +18,21 @@ export const headerSelectors = {
   searchButton: 'button[type="submit"]',
   
   // Carrinho
-  cartButton: 'button[aria-expanded]',
+  cartButton: '.woocommerce-message .button.wc-forward',
+  cartCountHeader: '.pull-right  .mini-cart-items',
+  cartAmountHeader: '.sub-title .woocommerce-Price-amount.amount',
   cartIcon: '.cart-icon',
   cartCount: 'button[aria-expanded]',
   cartTotal: 'button[aria-expanded] .woocommerce-Price-amount',
   
   // Dropdown do carrinho
-  cartDropdown: 'ul[class*="cart"]',
+  cartDropdown: '.dropdown .icon-basket',
   cartDropdownItem: 'ul[class*="cart"] li',
   cartDropdownItemName: 'ul[class*="cart"] li a[href*="/product/"]',
   cartDropdownItemQuantity: 'ul[class*="cart"] li .quantity',
   cartDropdownItemPrice: 'ul[class*="cart"] li .woocommerce-Price-amount',
   cartDropdownSubtotal: 'ul[class*="cart"] .subtotal .woocommerce-Price-amount',
-  cartDropdownViewCartLink: 'ul[class*="cart"] a[href*="/carrinho/"]',
+  cartDropdownViewCartLink: '.mini_cart_inner .button.wc-forward.view-cart',
   cartDropdownCheckoutLink: 'ul[class*="cart"] a[href*="/checkout/"]',
   cartDropdownRemoveItem: 'ul[class*="cart"] a.remove',
   

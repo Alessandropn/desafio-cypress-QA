@@ -44,6 +44,8 @@ selectSize(size) {
   // Espera a tabela de variações estar visível
   cy.get('table.variations', { timeout: 10000 }).should('be.visible');
 
+  cy.wait(500);
+
   // Seleciona diretamente o item da variação baseado no data-value
   cy.get('ul.variable-items-wrapper[data-attribute_name="attribute_size"]')
     .find(`li[data-value="${size}"]`)
@@ -51,7 +53,7 @@ selectSize(size) {
     .click({ force: true });
 
   // Aguarda UI atualizar
-  cy.wait(500);
+  cy.wait(1000);
 }
 
   /**
@@ -155,10 +157,7 @@ selectSize(size) {
    * Verifica se o botão de comprar está desabilitado
    */
   buyButtonShouldBeDisabled() {
-    cy.get(productPageSelectors.buyButton).then(($btn) => {
-      const hasDisabled = $btn.hasClass('disabled') || $btn.hasClass('wc-variation-selection-needed');
-      expect(hasDisabled).to.be.true;
-    });
+    cy.get(productPageSelectors.buyButton).should('have.class','disabled');
   }
 
   /**

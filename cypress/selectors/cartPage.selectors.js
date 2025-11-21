@@ -26,7 +26,7 @@ export const cartPageSelectors = {
   couponSection: '.coupon',
   couponInput: 'input[name="coupon_code"]',
   applyCouponButton: 'button[name="apply_coupon"]',
-  updateCartButton: 'button[name="update_cart"]',
+  updateCartButton: 'input[name="update_cart"]',
   
   // Totais
   cartTotals: '.cart_totals',

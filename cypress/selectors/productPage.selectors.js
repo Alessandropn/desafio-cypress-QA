@@ -34,7 +34,7 @@ export const productPageSelectors = {
   // Mensagens
   successMessage: '.woocommerce-message',
   successMessageText: '.woocommerce-message',
-  viewCartLink: 'a[href*="/carrinho/"]',
+  viewCartLink: '.woocommerce-message .button.wc-forward',
   
   // Informações adicionais
   sku: '.sku',
