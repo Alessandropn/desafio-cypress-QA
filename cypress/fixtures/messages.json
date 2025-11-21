@@ -19,8 +19,11 @@
   },
   "errors": {
     "requiredField": "Este campo é obrigatório",
-    "invalidEmail": "Email inválido",
-    "invalidCoupon": "Cupom inválido"
+    "invalidEmail": "O usuário email.invalido não está registrado neste site. Se você não está certo de seu nome de usuário, experimente o endereço de e-mail.",
+    "invalidCoupon": "Cupom inválido",
+    "invalidPassword": "A senha fornecida para o e-mail usuario.teste@ebac.com.br está incorreta.",
+    "passwordEmpty": "O campo da senha está vazio.",
+    "usernameEmpty": "Nome de usuário é obrigatório."
   }
 }
 
